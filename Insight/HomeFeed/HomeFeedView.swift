@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct HomeFeedView: View {
+    @ObservedObject private var viewModel = HomeFeedViewModel()
+    
     var body: some View {
-        Text("home feed")
+        NavigationView {
+            List(viewModel.articles) { article in
+                VStack {
+                    Text(article.title)
+                        .font(.headline)
+                    Text(article.summary)
+                        .font(.subheadline)
+                }
+            }
+            .navigationTitle("Articles")
+            .onAppear() {
+                self.viewModel.fetchData()
+            }
+        }
     }
 }
 
