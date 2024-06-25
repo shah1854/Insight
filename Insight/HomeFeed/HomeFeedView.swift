@@ -9,21 +9,27 @@ import SwiftUI
 
 struct HomeFeedView: View {
     @ObservedObject private var viewModel = HomeFeedViewModel()
-    
     var body: some View {
-        NavigationView {
+        
+        NavigationSplitView {
             List(viewModel.articles) { article in
-                VStack {
-                    Text(article.title)
-                        .font(.headline)
-                    Text(article.summary)
-                        .font(.subheadline)
+                NavigationLink {
+                    ArticleView(article: article)
+                } label: {
+                    VStack {
+                        Text(article.title)
+                            .font(.headline)
+                        Text(article.summary)
+                            .font(.subheadline)
+                    }
                 }
             }
             .navigationTitle("Articles")
             .onAppear() {
                 self.viewModel.fetchData()
             }
+        } detail: {
+            Text("Select Article")
         }
     }
 }

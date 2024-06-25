@@ -31,6 +31,8 @@
 		E6A402812C210C1D00D6309D /* NewUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A402802C210C1D00D6309D /* NewUserModel.swift */; };
 		E6A402872C2A1FA300D6309D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A402862C2A1FA300D6309D /* Article.swift */; };
 		E6A402892C2A208900D6309D /* HomeFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A402882C2A208900D6309D /* HomeFeedViewModel.swift */; };
+		E6A4028C2C2A38E700D6309D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A4028B2C2A38E700D6309D /* CardView.swift */; };
+		E6A4028E2C2A3E0200D6309D /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A4028D2C2A3E0200D6309D /* ArticleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		E6A402802C210C1D00D6309D /* NewUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserModel.swift; sourceTree = "<group>"; };
 		E6A402862C2A1FA300D6309D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		E6A402882C2A208900D6309D /* HomeFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedViewModel.swift; sourceTree = "<group>"; };
+		E6A4028B2C2A38E700D6309D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E6A4028D2C2A3E0200D6309D /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,7 @@
 			children = (
 				E6A4025F2C1CD45B00D6309D /* HomeFeedView.swift */,
 				E6A402882C2A208900D6309D /* HomeFeedViewModel.swift */,
+				E6A4028D2C2A3E0200D6309D /* ArticleView.swift */,
 				E6A4028A2C2A32B700D6309D /* Cards */,
 			);
 			path = HomeFeed;
@@ -225,6 +230,7 @@
 		E6A4028A2C2A32B700D6309D /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				E6A4028B2C2A38E700D6309D /* CardView.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -370,12 +376,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6A4028C2C2A38E700D6309D /* CardView.swift in Sources */,
 				E6A402642C1E548000D6309D /* LoginFields.swift in Sources */,
 				E6A402792C21029D00D6309D /* MainView.swift in Sources */,
 				E6A402702C20EF1500D6309D /* LoginFieldsViewModel.swift in Sources */,
 				E6A4027B2C21034900D6309D /* UserView.swift in Sources */,
 				E6A402602C1CD45B00D6309D /* HomeFeedView.swift in Sources */,
 				E6A4027F2C210C0D00D6309D /* NewUser.swift in Sources */,
+				E6A4028E2C2A3E0200D6309D /* ArticleView.swift in Sources */,
 				E6A402892C2A208900D6309D /* HomeFeedViewModel.swift in Sources */,
 				E6A402752C20F4C200D6309D /* AuthenticationManager.swift in Sources */,
 				E6A4022B2C18F2B400D6309D /* ContentView.swift in Sources */,
