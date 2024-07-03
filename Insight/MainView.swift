@@ -14,7 +14,7 @@ struct MainView: View {
         case feed
         case profile
     }
-    @Binding var showSignIn: Bool
+//    @Binding var showSignIn: Bool
     var body: some View {
         TabView(selection: $selection) {
             HomeFeedView()
@@ -24,7 +24,7 @@ struct MainView: View {
                 }
                 .tag(Tab.feed)
             
-            UserView(showSignIn: $showSignIn)
+            UserView()
                 .tabItem {
                     Image(systemName: "person.circle")
                     Text("Profile")
@@ -35,5 +35,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView(showSignIn: .constant(true))
+    MainView()
 }

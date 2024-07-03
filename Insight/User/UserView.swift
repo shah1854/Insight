@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserView: View {
     @StateObject private var viewModel = UserViewModel()
-    @Binding var showSignIn: Bool
+//    @Binding var showSignIn: Bool
     
     var body: some View {
         NavigationStack {
@@ -23,7 +23,7 @@ struct UserView: View {
                 Task {
                     do {
                         try viewModel.logOut()
-                        showSignIn = true
+//                        showSignIn = true
                     } catch {
                         print(error)
                     }
@@ -47,6 +47,6 @@ struct UserView: View {
 
 #Preview {
     NavigationStack {
-        UserView(showSignIn: .constant(false))
+        UserView()
     }
 }

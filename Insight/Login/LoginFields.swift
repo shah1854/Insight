@@ -68,6 +68,9 @@ struct LoginFields: View {
                 Button(action: {
                     viewModel.signIn()
                     
+                    NavigationLink {
+                        MainView()
+                    }
                 }, label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)

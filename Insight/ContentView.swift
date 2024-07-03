@@ -15,7 +15,7 @@ struct ContentView: View {
                 if showSignIn {
                     LoginFields()
                 } else {
-                    MainView(showSignIn: $showSignIn)
+                    MainView()
                 }
             }
         }
