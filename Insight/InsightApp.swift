@@ -14,7 +14,9 @@ struct InsightApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreenView()
+//                .transition(.opacity)
+//                .animation(.easeOut(duration: 1.5))
         }
     }
 }

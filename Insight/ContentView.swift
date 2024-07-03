@@ -10,21 +10,26 @@ import SwiftUI
 struct ContentView: View {
     @State private var showSignIn: Bool = false
     var body: some View {
-//        ZStack {
-//            NavigationStack {
-//                MainView(showSignIn: $showSignIn)
-//            }
-//        }
-//        .onAppear {
-//            let authUser = try? AuthenticationManager.shared.getUser()
-//            self.showSignIn = authUser == nil
-//        }
+        ZStack {
+            NavigationStack  {
+                if showSignIn {
+                    LoginFields()
+                } else {
+                    MainView(showSignIn: $showSignIn)
+                }
+            }
+        }
+        .onAppear {
+            let authUser = try? AuthenticationManager.shared.getUser()
+            self.showSignIn = authUser == nil
+            print("logged in user UID: \(String(describing: authUser?.uid))")
+        }
 //        .fullScreenCover(isPresented: $showSignIn) {
 //            NavigationStack {
 //                LoginFields()
 //            }
 //        }
-        MainView(showSignIn: $showSignIn)
+//        MainView(showSignIn: $showSignIn)
     }
 }
 

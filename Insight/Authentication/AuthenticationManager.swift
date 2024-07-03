@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseFirestore
 
 struct AuthDataResultModel {
     let uid: String
@@ -43,8 +44,27 @@ final class AuthenticationManager: ObservableObject {
         return AuthDataResultModel(user: user)
     }
     
-    func createUser(email: String, password: String) async throws -> AuthDataResultModel {
+    func createUser(name: String, email: String, password: String, interest1: String, interest2: String, interest3: String) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
+        
+        let db = Firestore.firestore()
+        let docData: [String: Any] = ["Name": name,
+                                      "Email": email,
+                                      "Interest1": interest1,
+                                      "Interest2": interest2,
+                                      "Interest3": interest3]
+        do {
+            try await db.collection("users").document(authDataResult.user.uid).setData(docData)
+          print("Document successfully written!")
+        } catch {
+          print("Error writing document: \(error)")
+        }
+
+        return AuthDataResultModel(user: authDataResult.user)
+    }
+    
+    func login(email: String, password: String) async throws -> AuthDataResultModel {
+        let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
         return AuthDataResultModel(user: authDataResult.user)
     }
     
