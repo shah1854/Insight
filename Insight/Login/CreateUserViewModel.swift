@@ -17,10 +17,10 @@ class CreateUserViewModel: ObservableObject {
     
     //@TODO: add password validation
     
-    func newUser() {
+    func newUser() -> Bool{
         guard !email.isEmpty, !password.isEmpty else {
             print("No Email or Password found")
-            return
+            return false
         }
         
         Task {
@@ -29,9 +29,12 @@ class CreateUserViewModel: ObservableObject {
                 
                 print("Successful Login")
                 print(returnedUserData)
+                return true
             } catch {
                 print("Error: \(error)")
+                return false
             }
         }
+        return false
     }
 }

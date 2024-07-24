@@ -9,11 +9,21 @@ import SwiftUI
 
 struct LoginFields: View {
     @StateObject private var viewModel = SignInViewModel()
-    @State var showView = true
+    @State var showView = false
     @State private var isSecured: Bool = true
     
+//    var body: some View {
+//        NavigationStack {
+//            if (showView) {
+//                ContentView()
+//            } else {
+//                loginView
+//            }
+//        }
+//    }
+    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Text("Login")
                     .font(.title)
@@ -66,11 +76,8 @@ struct LoginFields: View {
                 .padding()
                 
                 Button(action: {
-                    viewModel.signIn()
+                    showView = viewModel.signIn()
                     
-                    NavigationLink {
-                        MainView()
-                    }
                 }, label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
@@ -83,12 +90,18 @@ struct LoginFields: View {
                     }
                 })
                 .padding()
-                
+//                if showView {
+//                    MainView()
+//                }
                 NavigationLink {
                     CreateUserView()
                 } label: {
                     Text("Create Account")
                 }
+                
+            }
+            .navigationDestination(isPresented: $showView) {
+                MainView(showSignIn: false)
             }
         }
     }

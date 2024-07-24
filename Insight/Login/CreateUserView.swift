@@ -10,7 +10,19 @@ import SwiftUI
 struct CreateUserView: View {
     @StateObject private var viewModel = CreateUserViewModel()
     @State private var isSecured: Bool = true
+    @State var showView = false
+    
     var body: some View {
+        NavigationStack {
+            if showView {
+                MainView(showSignIn: false)  // This will show the main view when `showView` is true
+            } else {
+                createView  // Otherwise, it will show the login form
+            }
+        }
+    }
+    
+    var createView: some View {
         NavigationView {
             VStack {
                 Text("Create Account")
@@ -108,7 +120,7 @@ struct CreateUserView: View {
                 .padding()
                 
                 Button(action: {
-                    viewModel.newUser()
+                    showView = viewModel.newUser()
                 }, label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)

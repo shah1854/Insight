@@ -14,6 +14,7 @@ class UserViewModel: ObservableObject {
     
     func logOut() throws {
         try AuthenticationManager.shared.signOut()
+        
     }
     
 //    let db = Firestore.firestore()

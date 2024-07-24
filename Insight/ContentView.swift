@@ -9,14 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showSignIn: Bool = false
+    @StateObject private var viewModel = MainViewModel()
     var body: some View {
         ZStack {
-            NavigationStack  {
-                if showSignIn {
-                    LoginFields()
-                } else {
-                    MainView()
-                }
+            if viewModel.isSignedin, !viewModel.currUserID.isEmpty {
+                MainView(showSignIn: false)
+            } else {
+                LoginFields()
             }
         }
         .onAppear {

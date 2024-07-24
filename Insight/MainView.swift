@@ -14,26 +14,30 @@ struct MainView: View {
         case feed
         case profile
     }
-//    @Binding var showSignIn: Bool
+    var showSignIn: Bool
     var body: some View {
-        TabView(selection: $selection) {
-            HomeFeedView()
-                .tabItem {
-                    Image(systemName: "square.3.layers.3d")
-                    Text("Feed")
-                }
-                .tag(Tab.feed)
-            
-            UserView()
-                .tabItem {
-                    Image(systemName: "person.circle")
-                    Text("Profile")
-                }
-                .tag(Tab.profile)
+        if showSignIn {
+            ContentView()
+        } else {
+            TabView(selection: $selection) {
+                HomeFeedView()
+                    .tabItem {
+                        Image(systemName: "square.3.layers.3d")
+                        Text("Feed")
+                    }
+                    .tag(Tab.feed)
+                
+                UserView()
+                    .tabItem {
+                        Image(systemName: "person.circle")
+                        Text("Profile")
+                    }
+                
+            }.tag(Tab.profile)
         }
     }
 }
 
 #Preview {
-    MainView()
+    MainView(showSignIn: false)
 }

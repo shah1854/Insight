@@ -35,6 +35,7 @@
 		E6A402922C359C0100D6309D /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A402912C359C0100D6309D /* CreateUserView.swift */; };
 		E6A402942C359EB900D6309D /* CreateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A402932C359EB900D6309D /* CreateUserViewModel.swift */; };
 		E6A402962C35BCFC00D6309D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A402952C35BCFC00D6309D /* User.swift */; };
+		E6CB447C2C51C7D4009403A2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CB447B2C51C7D4009403A2 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		E6A402912C359C0100D6309D /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
 		E6A402932C359EB900D6309D /* CreateUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewModel.swift; sourceTree = "<group>"; };
 		E6A402952C35BCFC00D6309D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E6CB447B2C51C7D4009403A2 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				E6A402282C18F2B400D6309D /* InsightApp.swift */,
 				E6A4022A2C18F2B400D6309D /* ContentView.swift */,
 				E6A402782C21029D00D6309D /* MainView.swift */,
+				E6CB447B2C51C7D4009403A2 /* MainViewModel.swift */,
 				E6A4028F2C2CA20200D6309D /* SplashScreenView.swift */,
 				E6A402712C20F49C00D6309D /* Authentication */,
 				E6A402612C1E546900D6309D /* Login */,
@@ -399,6 +402,7 @@
 				E6A402872C2A1FA300D6309D /* Article.swift in Sources */,
 				E6A4027D2C21051800D6309D /* UserViewModel.swift in Sources */,
 				E6A402292C18F2B400D6309D /* InsightApp.swift in Sources */,
+				E6CB447C2C51C7D4009403A2 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

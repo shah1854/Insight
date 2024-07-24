@@ -9,21 +9,30 @@ import SwiftUI
 
 struct UserView: View {
     @StateObject private var viewModel = UserViewModel()
-//    @Binding var showSignIn: Bool
+    @State var showSignIn = false
     
     var body: some View {
         NavigationStack {
+            if showSignIn {
+                MainView(showSignIn: true)
+            } else {
+                mainView
+            }
+        }
+    }
+
+    var mainView: some View {
+        VStack {
             Image(systemName: "person.circle")
                 .resizable()
                 .scaledToFit()
                 .padding()
             
-            
-            Button (action: {
+            Button(action: {
                 Task {
                     do {
                         try viewModel.logOut()
-//                        showSignIn = true
+                        showSignIn = true
                     } catch {
                         print(error)
                     }
@@ -31,8 +40,7 @@ struct UserView: View {
             }, label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                        .frame(maxWidth: .infinity, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(.blue)
                         .frame(height: 55)
                         .padding()
                     Text("Log Out")
@@ -44,6 +52,7 @@ struct UserView: View {
         }
     }
 }
+
 
 #Preview {
     NavigationStack {
