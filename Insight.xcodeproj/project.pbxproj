@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E60065492C5C65780034ABDB /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = E60065482C5C65780034ABDB /* FirebaseInAppMessagingSwift-Beta */; };
 		E6A402292C18F2B400D6309D /* InsightApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A402282C18F2B400D6309D /* InsightApp.swift */; };
 		E6A4022B2C18F2B400D6309D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A4022A2C18F2B400D6309D /* ContentView.swift */; };
 		E6A4022D2C18F2B500D6309D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6A4022C2C18F2B500D6309D /* Assets.xcassets */; };
@@ -94,6 +95,7 @@
 				E6A4026A2C20ED3100D6309D /* FirebaseAuth in Frameworks */,
 				E6A4026C2C20ED3100D6309D /* FirebaseDatabase in Frameworks */,
 				E6A4026E2C20ED3100D6309D /* FirebaseFirestore in Frameworks */,
+				E60065492C5C65780034ABDB /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				E6A402592C18F53300D6309D /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +268,7 @@
 				E6A402692C20ED3100D6309D /* FirebaseAuth */,
 				E6A4026B2C20ED3100D6309D /* FirebaseDatabase */,
 				E6A4026D2C20ED3100D6309D /* FirebaseFirestore */,
+				E60065482C5C65780034ABDB /* FirebaseInAppMessagingSwift-Beta */,
 			);
 			productName = Insight;
 			productReference = E6A402252C18F2B400D6309D /* Insight.app */;
@@ -739,6 +742,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E60065482C5C65780034ABDB /* FirebaseInAppMessagingSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "FirebaseInAppMessagingSwift-Beta";
+		};
 		E6A402582C18F53300D6309D /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E6A402572C18F4CF00D6309D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
